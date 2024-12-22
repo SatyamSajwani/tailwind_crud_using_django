@@ -15,3 +15,6 @@ def login(request):
 
 def ragister(request):
     return render(request,'ragister.html')
+
+def create(request):
+    return render (request,'create.html')

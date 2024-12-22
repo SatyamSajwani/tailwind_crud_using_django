@@ -7,4 +7,5 @@ urlpatterns = [
     path('update',views.update,name='update'),
     path('login',views.login,name='login'),
     path('ragister',views.ragister,name='ragister'),
+    path('create',views.create,name='create'),
 ]
