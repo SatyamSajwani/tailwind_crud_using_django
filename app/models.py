@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+<<<<<<< HEAD
 class phone(models.Model):
 
     name_of_phone = models.CharField(max_length=100)
@@ -37,3 +38,10 @@ class phone(models.Model):
 
     def __str__(self):
         return self.name_of_phone
+=======
+class emp(models.Model):
+    name = models.CharField(max_length=150)
+    email= models.EmailField()
+    phone= models.CharField(max_length=10)
+    address =models.CharField(max_length=250)
+>>>>>>> 66b2e2d5c4707e87983c65d3d5d978dfe906c7ef

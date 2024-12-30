@@ -75,6 +75,7 @@ def update(request, id):
 
 
 
+<<<<<<< HEAD
 
 def insert(request):
     if request.method == 'POST':
@@ -93,3 +94,10 @@ def insert(request):
 def delete(request,id):
     delete_phone=get_object_or_404(phone,id=id).delete()
     return redirect('home')
+=======
+def ragister(request):
+    return render(request,'ragister.html')
+
+def create(request):
+    return render (request,'create.html')
+>>>>>>> 66b2e2d5c4707e87983c65d3d5d978dfe906c7ef
