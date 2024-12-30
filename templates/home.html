@@ -1,0 +1,113 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home | Satyam Sajwani</title>
+    {% tailwind_css %}
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-400">
+                    Satyam Sajwani | Django Fresher
+                </span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-4">
+                <a href="{% url 'ragister' %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700">
+                    Register
+                </a>
+                <a href="{% url 'login' %}" class="text-white bg-green-700 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2">
+                    Login
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen bg-cover bg-center text-white relative" style="background-image: url('{% static "home.jpeg" %}');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center relative z-10">
+            <h1 class="text-5xl font-bold mb-4 text-center">Welcome to Satyam Sajwani's Space</h1>
+            <p class="text-lg text-center max-w-2xl">
+                Dive into creativity and innovation. Explore projects, learn new skills, or collaborate with us.
+            </p>
+            <div class="mt-6 space-x-4">
+                <a href="{% url 'ragister' %}" class="bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg">
+                    Get Started
+                </a>
+                <a href="{% url 'ragister' %}" class="bg-gray-700 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-lg">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">About Me</h2>
+                <p class="text-gray-600 dark:text-gray-400">
+                    I am Satyam Sajwani, a student pursuing MCA at Sankalchand Patel University. With a keen interest in technology, I specialize in Django development and Android application development using Java. I am actively seeking opportunities to expand my skills and contribute to innovative projects.
+                </p>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2 text-gray-700 dark:text-gray-300">MCA Student</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2 text-gray-700 dark:text-gray-300">Django Developer</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-2 text-gray-700 dark:text-gray-300">Android Enthusiast</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Contact Me</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+            Feel free to reach out for collaborations or opportunities.
+        </p>
+        <div class="space-y-4">
+            <p class="text-gray-700 dark:text-gray-300">
+                <strong>Email:</strong> <a href="mailto:satyamsajwani7069@gmail.com" class="text-blue-500 hover:underline">satyamsajwani7069@gmail.com</a>
+            </p>
+            <p class="text-gray-700 dark:text-gray-300">
+                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/satyam-sajwani/" class="text-blue-500 hover:underline">linkedin.com/in/satyam-sajwani</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p>&copy; 2024 Satyam Sajwani. All rights reserved.</p>
+        <p class="mt-4">Powered by Django and Passion for Technology.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

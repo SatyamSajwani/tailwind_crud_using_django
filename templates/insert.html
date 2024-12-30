@@ -1,0 +1,71 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    {% load static tailwind_tags %}
+    {% tailwind_css %}
+</head>
+
+<body>
+
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
+        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Insert product</h2>
+
+        <form action="{% url 'insert' %}" method="POST">
+            {% csrf_token %}
+            <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+                <div class="sm:col-span-2">
+                    <label for="name_of_phone" class="block mb-2 text-sm font-medium text-gray-900  dark:text-white"></label>
+                    <input type="text" name="name_of_phone" id="name_of_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="Type product name" required="">
+                </div>
+                <div class="w-full">
+                    <label for="name_of_brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
+                    <input type="text" name="name_of_brand" id="name_of_brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="Product brand" required="">
+                </div>
+                <div class="w-full">
+                    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                    <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"  placeholder="enter amount" required="">
+                </div>
+                <div>
+                    <label for="cetegory_of_phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose a Cetegory</label>
+                    <select id="cetegory_of_phone" name="cetegory_of_phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                       
+                        <option value="select" {% if phone.cetegory_of_phone == "select" %}selected{% endif %}>Select</option>
+                        <option value="leptop" {% if phone.cetegory_of_phone  == "leptop" %}selected{% endif %}>Laptop</option>
+                        <option value="ipad" {% if phone.cetegory_of_phone  == "ipad" %}selected{% endif %}>iPad</option>
+                        <option value="phone" {% if phone.cetegory_of_phone  == "phone" %}selected{% endif %}>Phone</option>
+                        <option value="watch" {% if phone.cetegory_of_phone  == "watch" %}selected{% endif %}>Watch</option>
+                    </select>
+                </div>
+                <div>
+                    <label  for="color_of_phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose color</label>
+                    <select  id="color_of_phone" name="color_of_phone" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+                      <option value="select" {% if phone.color == "select" %}selected{% endif %}>Select</option>
+                      <option value="silver" {% if phone.color == "silver" %}selected{% endif %}>Silver</option>
+                      <option value="red" {% if phone.color == "red" %}selected{% endif %}>Red</option>
+                      <option value="blue" {% if phone.color == "blue" %}selected{% endif %}>Blue</option>
+                      <option value="green" {% if phone.color == "green" %}selected{% endif %}>Green</option>
+                      <option value="orange" {% if phone.color == "orange" %}selected{% endif %}>Orange</option>
+                    </select>
+                </div> 
+                <div class="sm:col-span-2">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                    <textarea id="description" name="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Write a product description here..."></textarea>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                
+                <button type="submit"  class="text-green-500 inline-flex items-center hover:text-white border border-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-green-600 dark:text-green-600 dark:hover:text-white dark:hover:bg-green-700 dark:focus:ring-green-900">
+                    Insert data
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+    </body>
+</html>
